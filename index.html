@@ -28,3 +28,48 @@
    <h1>ça c'est moi </h1> 
 <img src=https://www.atrv.ch/wp-content/uploads/2025/11/noe-701x1024.jpg" alt=moi>
       
+<title> Mon chat bot perso <titre>
+   <div id="conversation"></div>
+  <input type="text" id="message" placeholder="écris moi">
+  <button onclick=envoyer()"></button> 
+
+  <script>
+    async function envoyer () {
+      const message = document. getElementById ("message"). value; 
+
+      // affiche le message de l'utilisateur
+      document. getElementById ("conversation"). innerHTML +=
+        "<p><b>Toi :</b> + message + "</p";
+      // appel à l'API 
+      const reponse = await fetch("https://api.openai.com/v1/chat/completions", {
+        method"https://api.openai.com/v1/chat/completions"
+          methode: "POST",
+        headers:{
+          "Content-Type": "application/json"
+            "authorisation":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"
+        }.
+          body: JSON.strigify({
+            model:"gpt-3.5 turbo".
+              messages: [ 
+            {
+              role: "system",
+              content:"tu es l'assissant personnel de Noé. répond en Français. Noé est un adolescent de 14 ans qui est fondatuer d'alpiniawebcraft, une agence de création de site web, il est sur le point de faire sa première vente de site web le mercredi 24 juin 2026, au café de la coopérative à aproz, soit encourragent"
+            },
+            {
+              role: "user",
+              content: message
+                }
+              ]
+          })
+      });
+      const donnees = await reponse.json();
+
+      const texte = donnees.choices [0].messages.content;
+      // affiche la reponse du bot
+      document.getElementById("message").value = "";
+      </script>
+</body>
+</html>
+  
+              
+  
