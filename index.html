@@ -31,7 +31,7 @@
 <title> Mon chat bot perso <titre>
    <div id="conversation"></div>
   <input type="text" id="message" placeholder="écris moi">
-  <button onclick=envoyer()"></button> 
+  <button onclick="envoyer()"></button> 
 
   <script>
     async function envoyer () {
@@ -39,17 +39,17 @@
 
       // affiche le message de l'utilisateur
       document. getElementById ("conversation"). innerHTML +=
-        "<p><b>Toi :</b> + message + "</p";
+        "<p><b>Toi :</b> " + message + "</p";
       // appel à l'API 
       const reponse = await fetch("https://api.openai.com/v1/chat/completions", {
         method"https://api.openai.com/v1/chat/completions"
-          methode: "POST",
+          method: "POST",
         headers:{
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
             "authorisation":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"
         }.
           body: JSON.strigify({
-            model:"gpt-3.5 turbo".
+            model:"gpt-3.5-turbo",
               messages: [ 
             {
               role: "system",
@@ -64,12 +64,11 @@
       });
       const donnees = await reponse.json();
 
-      const texte = donnees.choices [0].messages.content;
+      const texte = donnees.choices[0].messages.content;
       // affiche la reponse du bot
-      document.getElementById("message").value = "";
+      document.getElementById("conversation").innerHTML +=
+        "<p><b>Bot :</b> " + texte + "</p>";
       </script>
 </body>
 </html>
-  
-              
-  ve
+
