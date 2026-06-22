@@ -1,74 +1,86 @@
 <!DOCTYPE html>
 <html>
-  <head>
-<title>Noé Vouillamoz</title>
 <head>
+    <meta charset="UTF-8">
+    <title>Noé Vouillamoz</title>
+</head>
 
-  <body>
-    <h1> je m'appelle Noé Vouillamoz, j'ai 14 ans, voici mes passions:<h1>
+<body>
+    <h1>Je m'appelle Noé Vouillamoz, j'ai 14 ans, voici mes passions:</h1>
 
-      <p> je suis en pleine croissance sur tous les points, mais je sens que je suis relativement différents des autres personnes de mon âge,. j'entreprends, ce que pour la majorité des gens correspond simplement à appuyer sur des boutons sur un ordi, tout ça à cause de... TikTok <p>
+    <p>Je suis en pleine croissance sur tous les points, mais je sens que je suis relativement différent des autres personnes de mon âge. J'entreprends, ce que pour la majorité des gens correspond simplement à appuyer sur des boutons sur un ordi, tout ça à cause de... TikTok</p>
         
-      <h2>J'ai également des passions et des choses qui m'interessent comme: le sport, je fais du trail, de la course à peid</h2>
-<h2>J'ai fait énormément de buisness avant de faire mon buisness actuel: une agence de cération de site web</h2>
-<p> j'ai fais des buisness comme: le dropshipping, le buisness MRR, des e-book débiles etc...</p>
-<p> mais je suis finalement rendu compte d'une chose: "les produits high-ticket, c'est l'avenir...</p>
-<p>en tout cas mon futur à moi<p>
-<ul>
-  <ol> <h1> Mes étapes dans la vie ont été les suivantes <h1>
-  <li> grandir</li>
-  <li> grandir</li> 
-  <li> grandir et encore grandir<li> 
-  </ol>
-<h2>ça fait maintenant plus de 2 ans et j'entrprends dans mes différents buisness<h2>
+    <h2>J'ai également des passions et des choses qui m'intéressent comme: le sport, je fais du trail, de la course à pied</h2>
 
+    <h2>J'ai fait énormément de business avant de faire mon business actuel: une agence de création de site web</h2>
 
-  <h1>mais toujours 0CHF<h1>
-    <p>je sais que je suis plus que la moyenne et meilleure que 99.9% des personnes de mon âge mais, ça n'avance pas aussi vite que je le veux<p>
-   <h1>ça c'est moi </h1> 
-<img src=https://www.atrv.ch/wp-content/uploads/2025/11/noe-701x1024.jpg" alt=moi>
-      
-<title> Mon chat bot perso <titre>
-   <div id="conversation"></div>
-  <input type="text" id="message" placeholder="écris moi">
-  <button onclick="envoyer()"></button> 
+    <p>J'ai fait des business comme: le dropshipping, le business MRR, des e-books débiles etc...</p>
 
-  <script>
-    async function envoyer () {
-      const message = document. getElementById ("message"). value; 
+    <p>Mais je me suis finalement rendu compte d'une chose: "les produits high-ticket, c'est l'avenir..."</p>
 
-      // affiche le message de l'utilisateur
-      document. getElementById ("conversation"). innerHTML +=
-        "<p><b>Toi :</b> " + message + "</p";
-      // appel à l'API 
-      const reponse = await fetch("https://api.openai.com/v1/chat/completions", {
-        method"https://api.openai.com/v1/chat/completions"
-          method: "POST",
-        headers:{
-          "Content-Type": "application/json",
-            "authorisation":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"
-        }.
-          body: JSON.strigify({
-            model:"gpt-3.5-turbo",
-              messages: [ 
-            {
-              role: "system",
-              content:"tu es l'assissant personnel de Noé. répond en Français. Noé est un adolescent de 14 ans qui est fondatuer d'alpiniawebcraft, une agence de création de site web, il est sur le point de faire sa première vente de site web le mercredi 24 juin 2026, au café de la coopérative à aproz, soit encourragent"
-            },
-            {
-              role: "user",
-              content: message
-                }
-              ]
-          })
-      });
-      const donnees = await reponse.json();
+    <p>En tout cas mon futur à moi</p>
 
-      const texte = donnees.choices[0].messages.content;
-      // affiche la reponse du bot
-      document.getElementById("conversation").innerHTML +=
-        "<p><b>Bot :</b> " + texte + "</p>";
-      </script>
+    <h2>Mes étapes dans la vie ont été les suivantes</h2>
+    <ol>
+        <li>Grandir</li>
+        <li>Grandir</li>
+        <li>Grandir et encore grandir</li>
+    </ol>
+
+    <p>Ça fait maintenant plus de 2 ans que j'entreprends dans mes différents business</p>
+
+    <h1>Mais toujours 0 CHF</h1>
+
+    <p>Je sais que je suis plus que la moyenne et meilleur que 99.9% des personnes de mon âge mais, ça n'avance pas aussi vite que je le veux</p>
+
+    <h1>Ça c'est moi</h1>
+    <img src="https://www.atrv.ch/wp-content/uploads/2025/11/noe-701x1024.jpg" alt="Moi">
+
+    <h2>Mon chatbot perso</h2>
+    <div id="conversation"></div>
+    <input type="text" id="message" placeholder="Écris-moi">
+    <button onclick="envoyer()">Envoyer</button>
+
+    <script>
+        async function envoyer() {
+            const message = document.getElementById("message").value;
+
+            // Affiche le message de l'utilisateur
+            document.getElementById("conversation").innerHTML +=
+                "<p><b>Toi:</b> " + message + "</p>";
+
+            // Appel à l'API
+            const reponse = await fetch("https://api.openai.com/v1/chat/completions", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer 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"
+                },
+                body: JSON.stringify({
+                    model: "gpt-3.5-turbo",
+                    messages: [
+                        {
+                            role: "system",
+                            content: "Tu es l'assistant personnel de Noé. Réponds en Français. Noé est un adolescent de 14 ans qui est fondateur d'Alpinia Web Craft, une agence de création de site web. Sois encourageant!"
+                        },
+                        {
+                            role: "user",
+                            content: message
+                        }
+                    ]
+                })
+            });
+
+            const donnees = await reponse.json();
+            const texte = donnees.choices[0].message.content;
+
+            // Affiche la réponse du bot
+            document.getElementById("conversation").innerHTML +=
+                "<p><b>Bot:</b> " + texte + "</p>";
+
+            document.getElementById("message").value = "";
+        }
+    </script>
 </body>
 </html>
 
